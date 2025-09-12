@@ -1,0 +1,31 @@
+---
+title: Introducing BashX
+---
+The main problem with integrating any HTML into bash is, that there are no reliable syntax options for it. That's why we present Bashx:
+
+
+```sh
+#!/bin/bashx
+function main() {
+  @return html {
+    <main>
+      <Component>
+          hello world!
+      </Component>
+    </main>
+  }
+}
+```
+
+This is an example of using `@return` for HTML.
+
+After that, we thought: Why not add JSON as well?
+```sh
+#!/bin/bashx
+@return json { 
+  "key": "$value"
+}
+```
+
+It's worth mentioning, that 
+
