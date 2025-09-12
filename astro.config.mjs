@@ -8,7 +8,8 @@ export default defineConfig({
 	base: '/docs',
 	integrations: [
 		starlight({
-			title: "test",
+			plugins: [starlightThemeRapide()],
+			title: "Fiction",
 			sidebar: [
         { 
           label: "test",
