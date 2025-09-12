@@ -7,7 +7,6 @@ export default defineConfig({
 	integrations: [
 		starlight({
 			title: "test",
-			plugins: [starlightThemeRapide()],
 			sidebar: [
         { 
           label: "test",
