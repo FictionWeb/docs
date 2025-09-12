@@ -11,7 +11,8 @@ export default defineConfig({
 			sidebar: [
         { 
           label: "test",
-          autogenerate: { directory: '/' }
+          autogenerate: { directory: '/' },
+		}
 			],
 		}),
 	],
