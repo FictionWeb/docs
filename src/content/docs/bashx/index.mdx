@@ -1,8 +1,7 @@
 ---
 title: Introducing BashX
 ---
-The main problem with integrating any HTML into bash is, that there are no reliable syntax options for it. That's why we present Bashx:
-
+The main problem with integrating any HTML into bash is, that there are no reliable syntax options for it. That's why we present BashX, followed by `.shx` and `.bashx` file extensions:
 
 ```sh
 #!/bin/bashx
@@ -27,5 +26,68 @@ After that, we thought: Why not add JSON as well?
 }
 ```
 
-It's worth mentioning, that 
+BashX would generate `echo "{ \"key\": \"$value\" }"` and execute it. 
 
+
+## Main concept of components
+BashX has two main functions for component building and data parsing:
+
+- @parse
+- @wrapper
+
+These functions build the whole system of components. 
+
+```
+  @return html {
+    <main>
+      <Component class='test'>
+        <Component2 />
+          hello world!
+      </Component>
+    </main>
+  }
+```
+
+BashX will parse this code block and return as:
+```sh
+{ 
+  echo '<main>'
+  Component class='test'
+  Component2
+  echo "hello world!"
+  /Component
+  echo '<main>'
+}
+```
+
+Any custom tag is parsed as function. It's worth mentioning that bashx has the same requirement for functions to have first letter capitalized.
+
+Here is an example of `Component` function:
+
+```sh
+function Component() {
+  @parse "$@"
+  @return html {
+    <div class="$class">
+      {@children}
+    </div>
+  }
+}
+@wrapper Component
+```
+
+`@wrapper` doesn't do magic, it just splits `Component` with `{@children}` and creates function `/Component`
+
+
+You can also see `@parse` function, which automatically parses all HTML-like arguments into variables. In our case, `class='test'` would store 'test' in variable $class.
+
+## Semi-dynamic actions
+
+`@parse` includes `on:*` and `js-on:*` events:
+
+- `on:<event>=<command>`: creates Server Action with 'command' and saves `on<event>='serverAction(...)'`. It's generally made for all functions and commands
+- `js-on:<event>=<domFunction>`: executes 'domFunction' and saves it's output as `on<event>='<output>'`. It's made for DOM functions and functions that return JavaScript code
+
+Default `on<event>=...` events are just saved as they are. 
+
+All events are saved in `$_events` variable, it depends on the developer, whether allow events or not.
