@@ -88,6 +88,12 @@ You can also see `@parse` function, which automatically parses all HTML-like arg
 - `on:<event>=<command>`: creates Server Action with 'command' and saves `on<event>='serverAction(...)'`. It's generally made for all functions and commands
 - `js-on:<event>=<domFunction>`: executes 'domFunction' and saves it's output as `on<event>='<output>'`. It's made for DOM functions and functions that return JavaScript code
 
+```
+@return html { 
+  
+}
+```
+
 Default `on<event>=...` events are just saved as they are. 
 
 All events are saved in `$_events` variable, it depends on the developer, whether allow events or not.
