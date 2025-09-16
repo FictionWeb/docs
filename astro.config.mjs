@@ -4,16 +4,19 @@ import starlight from '@astrojs/starlight';
 import starlightThemeRapide from 'starlight-theme-rapide'
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://fictionweb.github.io',
-	base: '/docs',
+	site: 'https://fiction.tirito.de',
 	integrations: [
 		starlight({
 			plugins: [starlightThemeRapide()],
 			title: "Fiction",
 			sidebar: [
         { 
-          label: "test",
-          autogenerate: { directory: '/' },
+          label: "Guides",
+          autogenerate: { directory: '/guides' },
+		},
+		{
+			label: "BashX",
+			autogenerate: { directory: '/bashx' }
 		}
 			],
 		}),

@@ -1,12 +1,42 @@
 ---
 title: Getting started
 ---
+import { Steps, Tabs, TabItem } from '@astrojs/starlight/components';
 
 Fiction uses most popular and pre-installed dependencies and has support for multiple cores for network. 
 
 ## Requirements 
 
-- bash 4.0+ (support in theory, not tested fully)
+- bash 4.0+ (4.* support in theory, not fully tested)
 - GNU coreutils
-- netcat/ncat/socat (for HTTPS and fork support)
+- netcat/ncat/socat (optional, for HTTPS and fork support)
 - awk, grep, sed (mostly preinstalled)
+
+## Installation
+
+<Steps>
+
+1. Install Fiction by cloning the github directory
+
+  ```sh
+  git clone https://github.com/FictionWeb/framework
+  ```
+2. Go to the framework directory 
+
+  ```sh 
+  cd framework
+  ```
+
+3. Make `bashx` and `fiction` executable binaries
+
+  ```sh
+  ln -s $(pwd)/fiction.so.sh /usr/bin/fiction && chmod +x /usr/bin/fiction
+  ln -s $(pwd)/modules/bashx /usr/bin/bashx && chmod +x /usr/bin/bashx
+  ```
+4. Start the server
+  
+  ```sh 
+  fiction run
+  ```
+
+</Steps>
