@@ -36,9 +36,27 @@ Fiction uses most popular and pre-installed dependencies and has support for mul
    ```
 
 4. Start the server
-  
+  <Tabs>
+   <TabItem label="fiction">
    ```sh 
    fiction run
    ```
+   </TabItem>
+   <TabItem label="bash">
+   Fiction automatically loads and executes main file with bashx
+   ```sh 
+   bash index.shx
+   ```
+   </TabItem>
+   <TabItem label="bashx">
+   You can also use bashx directly to start the file
+   ```sh 
+   bashx index.shx
+   ```
+   </TabItem>
+   </Tabs>
+
+5. Check if the server is working
+   Open `<server IP>:8080` in your browser; If you see the default page, Fiction is working and you can start editing the code in `index.shx` file.
 
 </Steps>
