@@ -14,21 +14,32 @@ Fiction uses most popular and pre-installed dependencies and has support for mul
 
 ## Installation
 
+:::note
+By default, Fiction uses `socat` for connection.
+
+If your machine doesn't include `socat`, change `core` option to bash (`core=bash`) or install socat with your system's package manager if possible.
+   
+```diff lang="sh"
+- FictionHttpServer "0.0.0.0:8080" core="socat"
++ FictionHttpServer "0.0.0.0:8080" core="bash"
+```
+:::
+
 <Steps>
 
-1. Install Fiction by cloning the github directory
+1. ### Install Fiction by cloning the github directory
 
    ```sh
    git clone https://github.com/FictionWeb/framework
    ```
 
-2. Go to the framework directory 
+2. ### Go to the framework directory 
 
     ```sh 
     cd framework
     ```
 
-3. Make `bashx` and `fiction` executable binaries
+3. ### Make `bashx` and `fiction` executable binaries
 
    ```sh
    ln -s $(pwd)/fiction.so.sh /usr/bin/fiction && chmod +x /usr/bin/fiction
@@ -56,9 +67,9 @@ Fiction uses most popular and pre-installed dependencies and has support for mul
    </TabItem>
    </Tabs>
 
-5. Check if the server is working
+5. ### Check if the server is working
+
    Open `<server IP>:8080` in your browser; If you see the default page, Fiction is working and you can start editing the code in `index.shx` file.
 
-   If Fiction returns error about missing `socat`, change `core` option to bash (`core=bash`) or install socat if possible.
 
 </Steps>
