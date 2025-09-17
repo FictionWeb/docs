@@ -36,7 +36,7 @@ Fiction uses most popular and pre-installed dependencies and has support for mul
    ```
 
 4. Start the server
-  <Tabs>
+   <Tabs>
    <TabItem label="fiction">
    ```sh 
    fiction run
@@ -58,5 +58,7 @@ Fiction uses most popular and pre-installed dependencies and has support for mul
 
 5. Check if the server is working
    Open `<server IP>:8080` in your browser; If you see the default page, Fiction is working and you can start editing the code in `index.shx` file.
+
+   If Fiction returns error about missing `socat`, change `core` option to bash (`core=bash`) or install socat if possible.
 
 </Steps>
