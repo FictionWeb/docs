@@ -1,0 +1,15 @@
+---
+title: Serving static content
+---
+
+While Fiction is mainly focused on BashX, it has support for many other content types and routes
+
+## Static HTML 
+You can serve static HTML pages using [FictionServeFile](/reference/FictionServeFile) function:
+
+```sh
+FictionServeFile "index.html" "/" "text/html"
+```
+
+This code would show index.html as HTML (text/html) on root route (`/`)
+

@@ -1,0 +1,14 @@
+---
+title: FictionServeFile
+---
+Creates a static route with file's content as response
+
+```sh
+FictionServeFile "<file>" "<routeAlias?>" "<content type?>"
+```
+
+| Argument | Description | Required |
+| --- | --- | --- |
+| $1 | File to host | true |
+| $2 | Use $2 instead of `/<file>` for route name | false |
+| $3 | Use custom content type instead of automatically defined one | false |
