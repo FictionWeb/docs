@@ -17,6 +17,10 @@ export default defineConfig({
 		{
 			label: "BashX",
 			autogenerate: { directory: '/bashx' }
+		},
+		{ 
+			label: "Reference",
+			autogenerate: { directory: '/reference' }
 		}
 			],
 		}),
