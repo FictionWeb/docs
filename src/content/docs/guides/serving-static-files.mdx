@@ -1,13 +1,16 @@
 ---
 title: Serving static content
+sidebar: 
+   order: 3
 ---
+import { FileTree } from '@astrojs/starlight/components';
 
 While Fiction is mainly focused on BashX, it has support for many other content types and routes
 
 ## Static content and HTML 
 You can serve files content using [FictionServeFile](/reference/FictionServeFile) function:
 
-```sh
+```bash
 FictionServeFile "<file>" "<routeAlias?>" "<content type?>"
 ```
 
@@ -15,7 +18,7 @@ This function creates a route which points to function that returns file's conte
 
 You can serve static HTML the same way by using text/html as content type
 
-```sh
+```bash
 FictionServeFile "index.html" "/" "text/html"
 FictionHttpServer "0.0.0.0:8080"
 ```
@@ -25,6 +28,14 @@ This code would show index.html as HTML (text/html) on root route (`/`)
 
 ## Directories
 Fiction supports directory file listing and using `tree` ([FictionServeDir](/reference/FictionServeDir))
+
+Let's say we have directory `test`:
+
+<FileTree>
+- test.txt
+- test.png
+- index.sh
+</FileTree>
 
 ```sh
 FictionServeDir "./test" "/files" false true

@@ -7,8 +7,24 @@ export default defineConfig({
 	site: 'https://fiction.tirito.de',
 	integrations: [
 		starlight({
-			plugins: [starlightThemeRapide()],
+		//	plugins: [starlightThemeRapide()],
 			title: "Fiction",
+			logo: { 
+				src: './src/assets/logo.svg',
+				replacesTitle: true
+			},
+      social: [
+        { 
+          icon: 'discord',
+          label: 'Discord',
+          href: 'https://discord.gg/S9UM5EuvDx'
+        },
+        { 
+          icon: 'github',
+          label: 'GitHub',
+          href: 'https://github.com/FictionWeb/framework'
+        }
+      ],
 			sidebar: [
         { 
           label: "Guides",

@@ -1,5 +1,7 @@
 ---
 title: Getting started
+sidebar: 
+   order: 1
 ---
 import { Steps, Tabs, TabItem } from '@astrojs/starlight/components';
 
@@ -41,7 +43,7 @@ If your machine doesn't include `socat`, change `core` option to bash (`core=bas
 
 3. ### Make `bashx` and `fiction` executable binaries
 
-   ```sh
+   ```bash
    ln -s $(pwd)/fiction.so.sh /usr/bin/fiction && chmod +x /usr/bin/fiction
    ln -s $(pwd)/modules/bashx /usr/bin/bashx && chmod +x /usr/bin/bashx
    ```
