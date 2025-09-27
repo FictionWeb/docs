@@ -1,0 +1,25 @@
+---
+title: FictionServeCGI
+---
+Creates a static route and executes executable CGI file with specific environment variables on request
+
+```sh
+FictionServeCGI "<file>" "<routeAlias?>" "<content type?>"
+```
+
+| Argument | Description | Type | Required |
+| --- | --- | --- | --- |
+| $1 | File to execute | file | true |
+| $2 | Use $2 instead of `/<file>` for route name | string | false |
+| $3 | Use custom content type instead of automatically defined one | string | false |
+
+### Available environment variables
+| Name | Description |
+| --- | --- |
+| SERVER_SOFTWARE | Name and version of the software |
+| REQUEST_METHOD | Request method |
+| REQUEST_PATH | Full path of the request |
+| FICTION_ROUTE | Same as REQUEST_PATH |
+| REMOTE_ADDR | IP address of client |
+| SCRIPT_FILENAME | Name of executable file |
+| HTTP_USER_AGENT | User-Agent header |
