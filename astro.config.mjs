@@ -10,8 +10,7 @@ export default defineConfig({
 		//	plugins: [starlightThemeRapide()],
 			title: "Fiction",
 			logo: { 
-				src: './src/assets/logo.svg',
-				replacesTitle: true
+				src: './src/assets/logo.svg'
 			},
       social: [
         { 

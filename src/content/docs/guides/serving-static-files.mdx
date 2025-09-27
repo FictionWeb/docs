@@ -27,17 +27,19 @@ This code would show index.html as HTML (text/html) on root route (`/`)
 
 
 ## Directories
-Fiction supports directory file listing and using `tree` ([FictionServeDir](/reference/FictionServeDir))
+Fiction supports directory file listing using [FictionServeDir](/reference/FictionServeDir)
 
 Let's say we have directory `test`:
 
 <FileTree>
-- test.txt
-- test.png
-- index.sh
+- test/
+  - test.txt
+  - test.png
+  - index.sh
 </FileTree>
 
-```sh
+
+```bash
 FictionServeDir "./test" "/files" false true
 ```
 
