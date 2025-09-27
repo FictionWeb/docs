@@ -7,8 +7,8 @@ Creates a static route with file's content as response
 FictionServeFile "<file>" "<routeAlias?>" "<content type?>"
 ```
 
-| Argument | Description | Required |
-| --- | --- | --- |
-| $1 | File to host | true |
-| $2 | Use $2 instead of `/<file>` for route name | false |
-| $3 | Use custom content type instead of automatically defined one | false |
+| Argument | Description | Type | Required |
+| --- | --- | --- | --- |
+| $1 | File to host | file | true |
+| $2 | Use $2 instead of `/<file>` for route name | string | false |
+| $3 | Use custom content type instead of automatically defined one | string | false |

@@ -24,4 +24,14 @@ This code would show index.html as HTML (text/html) on root route (`/`)
 
 
 ## Directories
-Fiction supports directory file listing and using `tree` ([FictionServeDir](/reference/FictionServeFile))
+Fiction supports directory file listing and using `tree` ([FictionServeDir](/reference/FictionServeDir))
+
+```sh
+FictionServeDir "./test" "/files" false true
+```
+
+This would create following routes:
+- `/files`: file tree of ./test
+- `/files/test.txt`: contents of test.txt
+- `/files/test.png`: image
+- `/files/index.sh`: contents of index.sh
