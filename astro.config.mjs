@@ -11,7 +11,7 @@ export default defineConfig({
 			title: "Fiction",
 			logo: { 
 				src: './src/assets/logo.png',
-				replaceTitle: true
+				replacesTitle: true
 			},
       social: [
         { 

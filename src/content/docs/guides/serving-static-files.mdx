@@ -8,7 +8,7 @@ import { FileTree } from '@astrojs/starlight/components';
 While Fiction is mainly focused on BashX, it has support for many other content types and routes
 
 ## Static content and HTML 
-You can serve files content using [FictionServeFile](/reference/FictionServeFile) function:
+You can serve files content using [FictionServeFile](/reference/fictionservefile) function:
 
 ```bash
 FictionServeFile "<file>" "<routeAlias?>" "<content type?>"
@@ -27,7 +27,7 @@ This code would show index.html as HTML (text/html) on root route (`/`)
 
 
 ## Directories
-Fiction supports directory file listing using [FictionServeDir](/reference/FictionServeDir)
+Fiction supports directory file listing using [FictionServeDir](/reference/fictionservedir)
 
 Let's say we have directory `test`:
 
