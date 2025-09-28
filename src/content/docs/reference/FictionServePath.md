@@ -4,7 +4,7 @@ title: FictionServePath
 Creates a new route
 
 ```sh
-FictionServeType "<route>" "<function>" "<content type>" "<route type?>"
+FictionServePath "<route>" "<function>" "<content type>" "<route type?>"
 ```
 
 | Argument | Description | Type | Required |
