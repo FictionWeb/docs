@@ -3,7 +3,72 @@ title: Using CGI and BOS
 sidebar: 
    order: 4
 ---
+import { Steps, Tabs, TabItem } from '@astrojs/starlight/components';
+
 It's pointless to create a completely new concept of web in bash while there are other well-known implementations, for example [Bash On Steroids](https://github.com/tinoschroeter/bash_on_steroids)
+
 
 Fiction supports CGI scripts and includes [FictionServeCGI](/reference/FictionServeCGI) function for CGI routes
 
+## Using Bash On Steroids
+<Steps>
+1. Download Bash On Steroids and example index
+
+   ```sh
+   wget https://raw.githubusercontent.com/tinoschroeter/bash_on_steroids/master/build.sh
+   wget https://raw.githubusercontent.com/tinoschroeter/bash_on_steroids/master/index.htsh
+   ```
+
+2. Run the builder
+
+   ```sh
+   bash build.sh
+   ```
+   This should create an index.cgi file in /usr/lib/cgi-bin
+
+3. Add CGI route
+
+   Open your main file (index.shx by default) and add simple HTML route:
+   ```sh title="index.shx"
+   FictionServeCGI "/usr/lib/cgi-bin/index.cgi" "/cgi" "text/html"
+   ```
+
+4. Start the server
+
+   <Tabs>
+   <TabItem label="fiction">
+   ```sh 
+   fiction run
+   ```
+   </TabItem>
+   <TabItem label="bash">
+   Fiction would automatically load and execute the main file with `bashx`
+   ```sh 
+   bash index.shx
+   ```
+   </TabItem>
+   <TabItem label="bashx">
+   You can also use bashx directly to start the file
+   ```sh 
+   bashx index.shx
+   ```
+   </TabItem>
+   </Tabs>
+
+5. Verify that it works
+   Open your server's URL in the browser and add `/cgi` to open CGI route; For all CGI features visit [FictionServeCGI](/reference/FictionServeCGI)
+
+</Steps>
+
+## Using other CGI scripts
+It's pretty straightforward, make your script executable 
+
+```sh 
+chmod +x /path/to/script
+```
+
+and add route:
+
+```sh title="index.shx"
+FictionServeCGI "/path/to/script" "/cgi" "text/html"
+```

@@ -88,11 +88,13 @@ You can also see `@parse` function, which automatically parses all HTML-like arg
 `@parse` includes `on:*` and `js-on:*` events:
 
 - `on:<event>=<command>`: creates Server Action with 'command' and saves `on<event>='serverAction(...)'`. It's generally made for all functions and commands
-- `js-on:<event>=<domFunction>`: executes 'domFunction' and saves it's output as `on<event>='<output>'`. It's made for DOM functions and functions that return JavaScript code
+- `js-on:<event>=<domFunction>`: executes 'domFunction' and saves it's output as `on<event>='<output>'`. It's made for DOM functions and functions that generate JavaScript code
 
 ```
 @return html { 
-  
+  <button on:click='myFunc' class='bg-blue-500 p-1'>
+  Click on me!
+  </button>
 }
 ```
 
