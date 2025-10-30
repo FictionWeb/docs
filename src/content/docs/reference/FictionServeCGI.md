@@ -1,10 +1,10 @@
 ---
-title: FictionServeCGI
+title: fiction.serveCGI
 ---
 Creates a static route and executes executable CGI file with specific environment variables on request
 
 ```sh
-FictionServeCGI "<file>" "<routeAlias?>" "<content type?>"
+fiction.serveCGI "<file>" "<routeAlias?>" "<content type?>"
 ```
 
 | Argument | Description | Type | Required |

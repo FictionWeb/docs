@@ -1,10 +1,10 @@
 ---
-title: FictionServeDynamicPath
+title: fiction.serveDynamic
 ---
 Creates a new dynamic route
 
 ```sh
-FictionServeDynamicPath "<route>" "<function>" "<content type>"
+fiction.serveDynamic "<route>" "<function>" "<content type>"
 ```
 
 | Argument | Description | Type | Required |

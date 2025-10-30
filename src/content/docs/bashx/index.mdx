@@ -82,22 +82,3 @@ function Component() {
 
 
 You can also see `@parse` function, which automatically parses all HTML-like arguments into variables. In our case, `class='test'` would store 'test' in variable $class.
-
-## Semi-dynamic actions
-
-`@parse` includes `on:*` and `js-on:*` events:
-
-- `on:<event>=<command>`: creates Server Action with 'command' and saves `on<event>='serverAction(...)'`. It's generally made for all functions and commands
-- `js-on:<event>=<domFunction>`: executes 'domFunction' and saves it's output as `on<event>='<output>'`. It's made for DOM functions and functions that generate JavaScript code
-
-```sh
-@return html { 
-  <button on:click='myFunc' class='bg-blue-500 p-1'>
-  Click on me!
-  </button>
-}
-```
-
-Default `on<event>=...` events are just saved as they are. 
-
-All events are saved in `$_events` variable, it depends on the developer, whether allow events or not.

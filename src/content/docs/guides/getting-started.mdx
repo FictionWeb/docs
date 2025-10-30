@@ -22,8 +22,8 @@ By default, Fiction uses `socat` for connection.
 If your machine doesn't include `socat`, change `core` option to bash (`core=bash`) or other supported core, or install socat with your system's package manager if possible.
    
 ```diff lang="sh"
-- FictionHttpServer "0.0.0.0:8080" core="socat"
-+ FictionHttpServer "0.0.0.0:8080" core="bash"
+- fiction.server "0.0.0.0:8080" core="socat"
++ fiction.server "0.0.0.0:8080" core="bash"
 ```
 :::
 

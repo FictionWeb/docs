@@ -1,5 +1,5 @@
 ---
-title: FictionServeDir
+title: fiction.serveDir
 ---
 Generates static route for each file in $1 and generates HTML file tree for the directory (optional)
 

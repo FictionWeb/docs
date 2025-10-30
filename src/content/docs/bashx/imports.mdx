@@ -2,23 +2,23 @@
 title: Imports
 ---
 
-It's not a React nor JSX specific feature, but we also added `import` with own features:
+It's not a React nor JSX specific feature, but we also added `@import` with own features:
 
 ```
-import <file> 
+@import <file> 
 OR
-import <file> as <functionName>
+@import <file> as <functionName>
 OR 
-import <function> from <file> [as <functionName>]
+@import <function> from <file> [as <functionName>]
 ```
 
-`import` is made for importing bashx files, functions or any other bash file/function. 
+`@import` is made for importing bashx files, functions or any other bash file/function. 
 
 If the file has `.shx` or `.bashx` file extension, it's evaluated with bashx, otherwise sourced with bash
 
-You can also import specific bash/bashx functions from files and declare it with custon alias name; If the function is wrapper, bashx would import both `Function` and `/Function`
+You can also import specific bash/bashx functions from files and declare it with custon alias name; If the function is a wrapper, bashx would import both `Function` and `/Function`
 ```sh
-import Button from "ui/src/Button.shx" as MyButton
+@import Button from "ui/src/Button.shx" as MyButton
 ```
 
 Importing a file with custom alias would create a function with file's contents

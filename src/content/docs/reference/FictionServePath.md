@@ -1,10 +1,10 @@
 ---
-title: FictionServePath
+title: fiction.serve
 ---
 Creates a new route
 
 ```sh
-FictionServePath "<route>" "<function>" "<content type>" "<route type?>"
+fiction.serve "<route>" "<function>" "<content type>" "<route type?>"
 ```
 
 | Argument | Description | Type | Required |
