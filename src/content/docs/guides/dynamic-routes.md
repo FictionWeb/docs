@@ -5,7 +5,7 @@ sidebar:
 ---
 Fiction provides full support for dynamic routing, but works different way for other popular frameworks. 
 
-Dynamic routes can be defined with [FictionServeDynamicPath](/reference/fictionservedynamicpath) function the same way as any other static route.
+Dynamic routes can be defined with [fiction.serveDynamic](/reference/fictionservedynamic) function the same way as any other static route.
 
 ```sh
 fiction.serveDynamic "<route>" "<function>" "<content type>"
@@ -31,5 +31,3 @@ Request path:
 
 [page] => $page => page1
 ```
-
-You can either use the variable directly or call `getSlug <slug>` function to get it's value
