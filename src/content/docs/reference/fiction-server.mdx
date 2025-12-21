@@ -1,0 +1,70 @@
+---
+title: fiction.server
+---
+import { Card } from '@astrojs/starlight/components';
+
+Starts main webserver process.
+
+```sh
+fiction.server "<ADDRESS>" <OPTIONS> ...
+```
+
+Address can contain port and protocol (`http(s)`), e.g.:
+
+```sh
+fiction.server "https://0.0.0.0"
+
+fiction.server "https://0.0.0.0:8080"
+
+fiction.server "http://localhost"
+```
+
+## Supported options
+Options syntax: `<key>=<value>` delimeted by space
+
+| option | description | type |
+| --- | --- | --- | 
+| ssl | enable SSL | boolean |
+| ssl_cert | SSL certificate file | filename |
+| ssl_key | SSL public key file | filename |
+| include_lucide | include lucide.dev icons in meta | boolean |
+| include_tailwind | include TailwindCSS for BashX | boolean |
+| expose_addr | show client's IPs in logs | boolean |
+| core | which core to use | string |
+
+## Supported cores
+
+<Card title="bash">
+    The most "bash" way. Uses bash's `accept` loadable to perform network socket bind. Requires `accept` module.
+    ```diff
++ doesn't rely on other commands
+- slower than other cores
+- works in single-connection mode only
+- doesn't support HTTPS
+    ```
+</Card>
+<Card title="ncat">
+    Uses Nmap's `ncat` for network operations.
+    ```diff
++ forking mode
++ supports HTTPS
+- requires ncat
+    ```
+</Card>
+<Card title="socat">
+    Uses `socat` for network operations.
+    ```diff
++ forking mode
++ supports HTTPS
+- requires socat (which is preinstalled on most machines)
+    ```
+</Card>
+<Card title="netcat">
+    Uses legacy netcat (`nc`) for network operations.
+    ```diff
++ forking mode
+- doesn't support HTTPS
+- slower than other cores
+- requires netcat-traditional
+    ```
+</Card>

@@ -4,7 +4,7 @@ title: fiction.serveDir
 Generates static route for each file in $1 and generates HTML file tree for the directory (optional)
 
 ```sh
-FictionServeDir "<directory>" "<routePrefix?>" "<download?>" "<show file tree?>"
+fiction.serveDir "<directory>" "<routePrefix?>" "<download?>" "<show file tree?>"
 ```
 
 | Argument | Description | Type | Required |

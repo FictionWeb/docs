@@ -19,4 +19,4 @@ Main configuration array of Fiction webserver.
 | encode_routes | Whether encode routes storage file or not | boolean | false | true |
 | default_index | Default index file to execute (bashx, fiction run/dev/build) | string | src/index.shx | true | 
 
-\* while following key is changeable, it's not recommended to change it because it can cause issues
+\* while following key is changeable, it's not recommended to change it because it can cause issues and change server's behavior
