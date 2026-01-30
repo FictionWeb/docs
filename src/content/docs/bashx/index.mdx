@@ -109,7 +109,7 @@ You can freely use variables inside components without any special syntax requir
 ## Conditional rendering
 Similarly to JSX/TSX, BashX has conditional rendering in form of subshell capture:
 ```
-$(which neofetch >/dev/null 2>1 && neofetch || <div class="text-3xl">neofetch is not installed</div>)
+$(which neofetch && neofetch || <div class="text-3xl">neofetch is not installed</div>)
 $( 
     [[ "$output" ]] && <div>$output</div> || <div>Nothing to show.</div>
 )
