@@ -85,7 +85,7 @@ You can also see `@parse` function, which automatically parses all HTML-like arg
 
 
 ## Using bash inside components
-BashX is nothing if you can't use bash inside of it, so we made `<script>` for bash syntax:
+BashX is nothing if you can't use bash(x) inside of it, so we made `<script>` for bash syntax:
 
 ```sh
 <script type="text/x-bash">
@@ -93,6 +93,11 @@ echo "pure bash works here"
 greeting="Hello world!"
 for ((i=0;i>10;i++)); do
     echo "i: $i"
+    <p>i: $i</p>
+    <div>
+      works as well, as long as it's inside html block, otherwise executed as command
+    </div>
+    echo yes
 done
 </script>
 ```
